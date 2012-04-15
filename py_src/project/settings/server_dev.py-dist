@@ -1,0 +1,26 @@
+import os
+from project.settings.development import *
+
+DEBUG = True
+TEMPLATE_DEBUG = DEBUG
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(PROJECT_DIR, '..', '..', 'matinfo-site'),
+        'USER': '',
+    },
+}
+
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': 'unix:/Users/Sites//matinfo-site/tmp/memcached.sock',
+    },
+}
+
+
+INSTALLED_APPS.extend(['gunicorn'])
+
+STATIC_ROOT = '/Users/mat/Sites/matinfo-site/static/'

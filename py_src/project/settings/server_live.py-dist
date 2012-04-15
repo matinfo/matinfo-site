@@ -1,0 +1,22 @@
+from project.settings.base import *
+
+INSTALLED_APPS.extend(['gunicorn'])
+
+DEBUG = False
+TEMPLATE_DEBUG = DEBUG
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', 
+        'HOST': 'localhost',
+        'NAME': 'YOUR_DB_NAME',
+        'USER': 'YOUR_DB_USER',
+        'PASSWORD': '**********',
+}
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': 'unix:/Users/Sites/matinfo-site/tmp/memcached.sock',
+    },
+}

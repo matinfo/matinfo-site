@@ -1,0 +1,27 @@
+[buildout]
+extends=
+    development_local.cfg
+#extensions += buildout.dumppickedversions
+#dump-picked-versions-file = personal-versions-dev.cfg
+#overwrite-picked-versions-file = true
+    
+find-links +=
+eggs +=
+develop +=
+
+[versions]
+
+[django]
+settings=project.settings.personal
+project_stage=my-dev
+#version=trunk
+#version=http://code.djangoproject.com/svn/django/trunk@12976
+#version=http://code.djangoproject.com/svn/django/trunk@12977
+wsgi=false
+test=
+    filer
+
+# this automatically updates bootstrap.py
+parts += bootstrap
+[bootstrap]
+recipe = collective.recipe.bootstrap
