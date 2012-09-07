@@ -42,7 +42,7 @@ DATABASES = {
 
 TIME_ZONE = 'Europe/Zurich'
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
 
 SITE_ID = 1
 
