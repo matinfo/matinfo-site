@@ -1,0 +1,18 @@
+{% load i18n %}<section id="comments">
+	<article id="comment-{{ comment.pk }}" class="{% if comment.user in object.authors.all %} post-author{% endif %}">
+		<header>
+			<time datetime="{{ comment.submit_date|date:"c" }}Z">{{ comment.submit_date|date:"l d F Y P" }}</time>
+			<a href="{{ object.get_absolute_url }}#comment-{{ comment.pk }}" title="{% trans "Permalink to this comment" %}">#</a>
+			<!-- <img src="{% get_gravatar comment.email 60 "G" %}" class="gravatar photo" alt="{{ comment.user_name }}"/> -->
+			<h3>
+			{% if comment.url %}
+				<a href="{{ comment.url }}" rel="external nofollow">{{ comment.user_name }}</a>
+			{% else %}
+				{{ comment.user_name }}
+			{% endif %}
+			{% trans "says" %}&hellip;
+			</h3>
+	    </header>
+	   	{{ comment.comment }}
+	</article>
+</section>

@@ -1,0 +1,27 @@
+{% extends "zinnia/base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Archive" %}{% endblock %}
+
+{% block content %}
+<article class="archive">
+	<h1>{% trans "Archived posts" %}</h1>
+
+	<ul>
+	{% for entry in archives %}
+		<li>
+			<time datetime="{{ entry.creation_date|date:"c" }}Z">{{ entry.creation_date|date:"F j, Y"|capfirst }}</time>
+			<a href="{{ entry.get_absolute_url }}" rel="bookmark">{{ entry.title }}</a>
+			{% comment %} {% with entry.comments.count as comment_count %}
+			<span>[ {{ comment_count }} {% trans "comment" %}{{ comment_count|pluralize }} ]</span>
+			{% endwith %} {% endcomment %}
+	    </li>
+	    {% empty %}
+	    <li>
+	      {% trans "No entries yet." %}
+	    </li>
+	{% endfor %}
+	</ul>
+</article>
+
+{% endblock %}

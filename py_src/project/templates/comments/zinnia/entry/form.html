@@ -1,0 +1,64 @@
+{% load comments i18n %}
+<section id="respond">
+    <h1>{% trans "Comment on this post" %}</h1>
+    <p>{% trans 'Please wrap code fragments in <code>&lt;code&gt;</code> tags, wrap blocks of code in <code>&lt;pre&gt;&lt;code&gt;</code>, and use <a href="http://jsfiddle.net">JsFiddle</a> to post working examples.' %}</p>
+    <form action="{% comment_form_target %}" method="post">{% csrf_token %}
+	<fieldset>
+		
+        <div id="div_{{ form.comment.auto_id }}" class="{% if form.comment.errors %} error{% endif %}{% if form.comment.field.widget.attrs.class %} {{ form.comment.field.widget.attrs.class }}{% endif %}{% if form.comment.field.required %} required{% endif %}">
+		<label for="{{ form.comment.auto_id }}">{% trans "Your comments" %}</label>
+        <textarea id="{{ form.comment.auto_id }}" name="{{ form.comment.name }}" cols="50" rows="10" required="" aria-required="true"></textarea>
+            {% for error in form.comment.errors %}
+                <p id="error_{{ forloop.counter }}_{{ form.comment.auto_id }}" class="error">
+                    {{ error|safe }}
+                </p>
+            {% endfor %}
+		</div>
+
+        <div id="div_{{ form.name.auto_id }}" class="{% if form.name.errors %} error{% endif %}{% if form.name.field.widget.attrs.class %} {{ form.name.field.widget.attrs.class }}{% endif %}{% if form.name.field.required %} required{% endif %}">
+		<label for="{{ form.name.auto_id }}">{% trans "Name <span>(required)</span>" %}</label>
+		<input id="{{ form.name.auto_id }}" name="{{ form.name.name }}" type="text" value="" required="" aria-required="true" maxlength="50">
+            {% for error in form.name.errors %}
+                <p id="error_{{ forloop.counter }}_{{ form.name.auto_id }}" class="error">
+                    {{ error|safe }}
+                </p>
+            {% endfor %}
+		</div>
+
+        <div id="div_{{ form.email.auto_id }}" class="{% if form.email.errors %} error{% endif %}{% if form.email.field.widget.attrs.class %} {{ form.email.field.widget.attrs.class }}{% endif %}{% if form.email.field.required %} required{% endif %}">
+		<label for="{{ form.email.auto_id }}">{% trans "Email <span>(required but not published)</span>" %}</label>
+		<input id="{{ form.email.auto_id }}" name="{{ form.email.name }}" type="text" value="" required="" aria-required="true" maxlength="75">
+            {% for error in form.email.errors %}
+                <p id="error_{{ forloop.counter }}_{{ form.email.auto_id }}" class="error">
+                    {{ error|safe }}
+                </p>
+            {% endfor %}
+		</div>
+
+        <div id="div_{{ form.url.auto_id }}" class="{% if form.url.errors %} error{% endif %}{% if form.url.field.widget.attrs.class %} {{ form.url.field.widget.attrs.class }}{% endif %}{% if form.url.field.required %} required{% endif %}">
+		<label for="{{ form.url.auto_id }}">{% trans "Website URL <span>(if you have one)</span>" %}</label>
+		<input id="{{ form.url.auto_id }}" name="{{ form.url.name }}" type="url" value="" maxlength="255">
+            {% for error in form.url.errors %}
+                <p id="error_{{ forloop.counter }}_{{ form.url.auto_id }}" class="error">
+                    {{ error|safe }}
+                </p>
+            {% endfor %}
+		</div>
+		
+		<div>
+		<input type="submit" name="submit" class="submit-post button" value="{% trans "Submit comment" %}">
+		
+	    <input type="hidden" name="next" value="{% url zinnia_discussion_success %}">
+	    {% for field in form %}
+	    {% if field.is_hidden %}{{ field }}{% else %}
+	    {% ifequal field.name "honeypot" %} 
+		<span style="display:none;">
+		{{ field }}
+	    </span>
+		{% endifequal %}
+	    {% endif %}
+	    {% endfor %}
+	    </div>
+	</fieldset>
+</form>
+</section>

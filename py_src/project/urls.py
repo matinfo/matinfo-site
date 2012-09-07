@@ -1,6 +1,8 @@
 from django.conf.urls.defaults import *
 from django.conf import settings
 from django.contrib import admin
+from django.views.generic.simple import direct_to_template
+from views import get_archive_list
 
 admin.autodiscover()
 
@@ -17,6 +19,23 @@ urlpatterns = patterns('',
     ('^$', 'django.views.generic.simple.redirect_to', {'url': '/blog/'}),
     (r'^blog/', include('zinnia.urls')),
     (r'^comments/', include('django.contrib.comments.urls')),
+
+    # blog custom
+    url(r'^blog/archives/$', get_archive_list,
+            {'template': 'zinnia/archive_list.html'},
+            name='zinnia_custom_archive_list'),
+
+    # static pages (or use flatpages app)
+    url(r'^about/$', direct_to_template,
+            { 'template': 'staticpages/about.html' },
+            name='about'),
+    url(r'^resume/$', direct_to_template,
+            { 'template': 'staticpages/resume.html'},
+            name='resume'),
+
+    # extra apps URLs
+    #(r'^contact/', include('contact_form.urls')),
+    #(r'^portfolio/', include('portfolio.urls')),
 
     (r'^admin/login-as/', include('login_as.urls')),
     (r'^admin/', include(admin.site.urls)),

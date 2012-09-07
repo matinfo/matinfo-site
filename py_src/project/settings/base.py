@@ -50,20 +50,21 @@ USE_I18N = False
 
 USE_L10N = False
 
-USE_TZ = True # Django >= 1.4.0
+USE_TZ = False # Django >= 1.4.0
 
 PROJECT_DIR = os.path.abspath( os.path.join(os.path.dirname(__file__),'../') )
 
-MEDIA_ROOT = os.path.join(PROJECT_DIR, '..', '..', 'media')
-
+# files uploaded from apps.
+MEDIA_ROOT = os.path.join(PROJECT_DIR, '..', '..', 'tmp', 'media')
 MEDIA_URL = '/media/'
 
+# all collected statics file of apps - prod only.
 STATIC_ROOT = os.path.join(PROJECT_DIR, '..', '..', 'tmp', 'static')
-
 STATIC_URL = '/static/'
 
 ADMIN_MEDIA_PREFIX = ''.join([STATIC_URL, 'admin/'])
 
+# change for every project!!!
 SECRET_KEY = 'jkUUidfsfz5hgji789hkjHFD$drte@jhgJESD!bjh(rt+hfD'
 
 TEMPLATE_LOADERS = [
@@ -78,6 +79,7 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.middleware.http.ConditionalGetMiddleware',
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 ]
 
 ROOT_URLCONF = 'project.urls'
@@ -87,7 +89,7 @@ TEMPLATE_DIRS = [
 ]
 
 INSTALLED_APPS = [
-    # django core apps
+# django core apps
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -96,29 +98,30 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.comments',
     'django.contrib.admin',
+    #'django.contrib.flatpages',
 
-    # 3rd party apps
+# base apps
+    'mptt',
+    'tagging',
+    'zinnia',
+    'django_bitly', # not require
+    #'django_xmlrpc', # not require
+    'south',
+# 3rd party apps
     'appmedia',
     'easy_thumbnails',
     'filer',
     'login_as',
-    'sekizai',
-    'south',
-    'crispy_forms',
-#    'django_extensions',
+    #'sekizai',
+    #'crispy_forms',
+    #'django_extensions',
 
-    # custom apps
-    'mptt',
-    'tagging',
-    'django_bitly',
-    'django_xmlrpc',
-    'ifactiveurl',
+# custom apps
+    'project', # mandatory
     'ajaxcomments',
     #'djcelery',
     #'ghettoq',
     #'monitor',
-    'zinnia',
-    'project',
 ]
 
 TEMPLATE_CONTEXT_PROCESSORS = [
@@ -130,7 +133,7 @@ TEMPLATE_CONTEXT_PROCESSORS = [
     "django.core.context_processors.request",
     "django.contrib.messages.context_processors.messages",
     "django.core.context_processors.static",
-    "sekizai.context_processors.sekizai",
+    #"sekizai.context_processors.sekizai",
     "zinnia.context_processors.version", # optional
 ]
 
@@ -139,15 +142,15 @@ THUMBNAIL_QUALITY = 70
 THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.colorspace',
     'easy_thumbnails.processors.autocrop',
-#    'easy_thumbnails.processors.scale_and_crop',
-    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+    'easy_thumbnails.processors.scale_and_crop',
+    #'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters',
 )
 
 SERVER_EMAIL = 'django@%s' % os.uname()[1]
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-DATE_FORMAT = 'd.m.Y'
+DATE_FORMAT = 'N j, Y'
 DATETIME_FORMAT = 'd.m.Y H:i'
 TIME_FORMAT = 'H:i'
 YEAR_MONTH_FORMAT = 'F Y'

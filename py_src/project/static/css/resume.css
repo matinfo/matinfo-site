@@ -1,0 +1,112 @@
+
+@media all {
+
+
+
+
+/* TYPOGRAPHY */
+
+body                                   {max-width:620px; min-width:430px; padding:10px 25px; margin:0 auto;
+                                        font:100%/1 Cambria, Georgia, Times New Roman, Times, serif; color:#444; background:#fff;}
+                                        
+/* Links */
+a:link, a:visited                      {border-bottom:1px solid #006699; color:#006699; text-decoration:none;}
+a:visited                              {border-bottom:1px solid #004d7a; color:#004d7a;}
+a:hover, a:focus, a:active             {border:0; color:#fff; background:#004d7a;}
+a:visited:hover                        {background:#004d7a;}
+
+/* Headings, paragraphs, quotes */
+h1, h2, h3, h4                         {font-weight:normal; line-height:1.2em; color:#222;}
+p, blockquote                          {margin:0.3em 0 1.4em; font-size:1em; line-height:1.4em;} /* 16px */
+blockquote                             {padding:0 25px; border-left:3px solid #999; margin:1em 0 1.4em;}
+blockquote p                           {font-family:calibri, arial, sans-serif; font-size:1em; color:#666;}
+
+/* Lists */
+ul, ol                                 {margin:0.25em 0 1.4em;}
+ul                                     {list-style:none;}
+ul li, ol li                           {padding:0; margin:0 0 0.5em; font-size:1em; line-height:1.4em;} /*16px*/
+li li, li p                            {font-size:1em;}
+
+/* Other */
+strong                                 {font-weight:bold;}
+em                                     {font-style:italic;}
+small                                  {font-size:0.875em;}
+
+
+
+/* HEADER */
+
+body > header                          {padding-bottom:10px; /*border-top:4px solid #939393;*/}
+body > header hgroup                   {padding-top:20px; margin-bottom:20px; text-align:center;}
+body > header hgroup h1                {text-transform:uppercase; font-size:50px; line-height:1.1em; word-spacing:0.15em;}
+body > header hgroup h2                {font-size:21px;}
+body > header dl                       {line-height:1.2em; text-align:center;}
+body > header dt                       {position:absolute; left:-9000px;}
+body > header dd                       {margin:0.25em 0 0;}
+
+/* SECTIONS */
+
+body > section                         {clear:both; padding:0 15px; margin:2em 0 3em;}
+body > section > h1                    {padding:0 15px 0.25em; border-bottom:1px solid #ccc; margin:0 -15px 0.5em; font-size:24px;
+                                        text-transform:uppercase;}
+
+body > section li > span               {display: block;}
+
+section section                        {margin:0;}
+section section h1                     {font-size:18px; color:#6a8014;}
+section section h1 span                {font-style:italic;}
+section section h2                     {display:inline; font-size:16px; color:#111;}
+section section h2:before              {content:"~ ";}
+section section hgroup,
+ section section hgroup + p            {display:inline; margin:0;}
+section section hgroup + p:before      {content:"/ ";}
+section section ul                     {list-style:square;}
+section section + section              {margin-top:1.5em;}
+
+.contact                               {padding-top:1em; border-top:1px solid #ccc;}
+.contact ul li                         {display:inline;}
+.contact ul li:before                  {content:"\00b7  ";}
+.contact ul li:first-child:before      {content:"";}
+
+/* end of @media all */}
+
+
+@media print {
+
+body                                   {max-width:none; width:auto; padding:0; font-size:11pt; color:#000;}
+abbr[title]                            {border:0;}
+a:link, a:visited                      {border:0; color:#520;}
+section a:link, section a:visited      {color:#000;}
+section a[href]:after                  {content:" - " attr(href); border-bottom:2px solid #520; color:#520;}
+
+body > header                          {border-top:0;}
+body > header hgroup                   {padding-top:0;}
+body > header hgroup h1                {font-size:32pt;}
+body > header hgroup h2                {font-size:14pt;}
+
+body > section                         {padding:0.75em 0 0 25%; border-top:1px solid #ccc; margin:2em 0 2em;}
+body > section > h1                    {float:left; width:33%; padding:0; border:0; margin:0 0 0 -33%; font-size:16pt;
+                                        text-align:left;}
+
+/* end of @media print */}
+
+@media handheld, screen and (max-width: 480px) {
+
+body                                   {min-width:0; padding:5px; font-size:14px;}
+h1, h2, h3, h4                         {color:#333;}
+
+body > header hgroup                   {padding-top:10px;}
+body > header hgroup h1                {font-size:24px;}
+body > header hgroup h2                {font-size:14px;}
+
+body > section                         {padding:0; margin:2em 0;}
+body > section > h1                    {padding-left:0; padding-right:0; margin:0 0 0.5em; font-size:20px;}
+
+section section h1                     {font-size:16px;}
+section section h2                     {font-size:14px;}
+section section hgroup                 {display:block;}
+section section hgroup + p             {display:block; margin-bottom:0.75em; font-size:13px;}
+section section hgroup + p:before      {content:"";}
+section section ul                     {padding-left:15px;}
+
+/* end of @media handheld */}

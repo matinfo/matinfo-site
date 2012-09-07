@@ -1,0 +1,67 @@
+{% load zinnia_tags i18n %}{% get_tags as entry_tags %}<!doctype html>
+<html dir="ltr" lang="{{ LANGUAGE_CODE }}">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %} | MatInfo's Blog</title>
+    <meta name="language" content="{{LANGUAGE_CODE}}">
+    <meta name="robots" content="follow, all" />
+    <meta name="description" content="{% block meta-description %}Matinfo's, my personal weblog.{% endblock %}" />
+    <meta name="keywords" content="{% block meta-keywords %}mathieu, meylan, personal, blog, technologies, linux, open source, python, django, swiss, switzerland, django-cms{% endblock %}" />
+    <meta name="author" content="Mathieu Meylan" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0;" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    {% block meta %}{% endblock %}
+    <link rel="pingback" href="/xmlrpc/" />
+    <link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon.png" />
+    <link rel="apple-touch-icon" href="{{ STATIC_URL }}img/favicon.png" />
+    <link rel="image_src" href="{{ STATIC_URL }}img/favicon.png" />
+    {% block link-rel-home %}{% endblock %}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/styles.css">
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    {% block link %}{% endblock %}
+  </head>
+  <body>
+<!--[if lt IE 7 ]> <div class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <div class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <div class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <div class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <div> <!--<![endif]-->
+
+    {# nav:navigation, div:search #}
+    {% block header %}{% endblock %}
+
+
+    {# div:main, aside:slider #}
+    {% block main-content %}{% endblock %}
+    
+    {# footer:contentinfo #}
+    {% block footer %}{% endblock %}
+ 
+
+    <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    <script>!window.jQuery && document.write(unescape('%3Cscript src="{{STATIC_URL}}js/libs/jquery-1.4.4.min.js"%3E%3C/script%3E'))</script>
+
+    <!-- scripts concatenated and minified via ant build script-->
+    <script src="{{STATIC_URL}}js/plugins.js"></script>
+    <script src="{{STATIC_URL}}js/script.js"></script>
+    <!-- end concatenated and minified scripts-->
+
+    <!-- page custom scripts -->
+    {% block script %}{% endblock %}
+
+    <!-- asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet 
+         change the UA-XXXXX-X to be your site's ID -->
+    <script>
+      var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
+      (function(d, t) {
+        var g = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+        g.async = true;
+        g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g, s);
+      })(document, 'script');
+    </script>
+  </div>
+  </body>
+</html>

@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block link %}
-    <link rel="index" href="{% url zinnia_entry_archive_index %}" />
+    <link rel="index" href="{% url zinnia_custom_archive_list %}" />
     <link rel="author" type="text/plain" href="{% url zinnia_humans %}" />
     <link rel="EditURI" type="application/rsd+xml" href="{% url zinnia_rsd %}" />
     <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="{% url zinnia_wlwmanifest %}" />
@@ -19,18 +19,10 @@
   {% zinnia_breadcrumbs %}
 {% endblock %}
 
+
 {% block sidebar %}
 <aside id="widget-search" class="widget" role="search">
-  <h3>{% trans "Search" %}</h3>
-  <form method="get" id="searchform" action="{% url zinnia_entry_search %}">
-    <p>
-      <input type="text" value="{% trans "Keywords..." %}" name="pattern" id="searchbox" onfocus="this.value=''" />
-      <input type="submit" class="submitbutton" value="OK" />
-      <a title="{% trans 'You can use - to exclude words or phrases, &quot;double quotes&quot; for exact phrases and the AND/OR boolean operators combined with parenthesis for complex searchs.' %}">
-        <img src="{{ STATIC_URL }}zinnia/img/help.png" alt="?" width="14" height="14" />
-      </a>
-    </p>
-  </form>
+
 </aside>
 <aside id="widget-categories" class="widget">
   <h3>{% trans "Categories" %}</h3>

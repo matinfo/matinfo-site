@@ -1,4 +1,5 @@
 #!/bin/sh
+mkdir -p tmp
 echo "getting boostrap.py"
 if [ -f "bootstrap.py" ]; then
     rm bootstrap.py

@@ -1,0 +1,40 @@
+{% load i18n activelink %}
+{% load url from future %}
+<div class="perso">
+    <a class="site-logo" href="/">
+        <img src="https://secure.gravatar.com/avatar/db0536eecf17ee78d2cf1561f778c819?s=140" width="50" height="50" alt="">
+    </a>
+    <h1 class="site-h1"><a title="{% trans "go to the homepage" %}" href="/">Mathieu Meylan</a></h1>
+    <h2 class="site-h2">{% trans "some things from me to ..." %}</h2>
+</div>
+
+<!-- navigation: main -->
+<nav class="site-nav" role="navigation">
+    <ul>
+        <li class="{% ifstartswith "/blog/" %}current{% endifstartswith %}"><a href="{% url "zinnia_entry_archive_index" %}">{% trans "blog" %}</a></li>
+        <li class="{% ifactive "/blog/archives/" %}current{% endifactive %}"><a href="{% url "zinnia_custom_archive_list" %}">{% trans "archives" %}</a></li>
+        <!-- <li><a href="/portfolio/">{% trans "portfolio" %}</a></li> -->
+        <li class="{% ifactive "/about/" %}current{% endifactive %}"><a href="{% url "about" %}">{% trans "about" %}</a></li>
+    </ul>
+</nav>
+
+<!-- wai: shortcuts -->
+<hr class="hidden" />
+<h2 class="visuallyhidden">Shortcuts:</h2>
+<ul class="hidden" role="navigation">
+    <li><a href="/" title="[Alt + 0]" accesskey="0">Go to home</a></li>
+    <li><a href="#navigation" title="[Alt + 1]" accesskey="1">Jump to navigation</a></li>
+    <li><a href="#content" title="[Alt + 2]" accesskey="2">Jump to content</a></li>
+</ul>
+<hr class="hidden" />
+
+<!-- search: field -->
+<div class="site-search" role="search">
+  <form method="get" id="searchform" action="{% url "zinnia_entry_search" %}">
+    <fieldset>
+        <label for="searchbox" class="visuallyhidden">{% trans "search" %}</label>
+        <input type="search" name="pattern" id="searchbox" placeholder="{% trans "&#187; search ..." %}" autocomplete="off" />
+        <span class="btn_search visuallyhidden"><input type="submit" value="search" /></span>
+    </fieldset>
+  </form>
+</div>

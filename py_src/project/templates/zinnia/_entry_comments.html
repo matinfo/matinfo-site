@@ -1,0 +1,40 @@
+{% load i18n zinnia_tags %}
+<section id="comments">
+  {% with comment_list=object.comments %}
+  {% spaceless %}<h1>
+  {% ifequal comment_list.count 0 %}
+    {% trans "Comment" %}
+    {% else %}
+    {{comment_list.count}} {% trans "comments" %}
+    {% endifequal %}</h1>
+  {% endspaceless %}
+  {% if comment_list.count %}
+  {% for comment in comment_list %}
+    <article id="c{{ comment.pk }}" class="comment {% cycle box1,box2 %}{% if comment.user in object.authors.all %} post-author{% endif %}">
+      <header>
+        <time datetime="{{ comment.submit_date|date:"c" }}Z">{{ comment.submit_date|date:"l d F Y P" }}</time>
+        <a href="{{ comment.get_absolute_url }}" title="{% trans "Permalink to this comment" %}">#</a>
+        <h3>{% if comment.url %}
+          <a href="{{ comment.url }}" rel="external nofollow"
+             class="fn url">{{ comment.user_name }}</a>
+          {% else %}{{ comment.user_name }}{% endif %} {% trans "says" %} &hellip;
+        </h3>
+      </header>
+      <!-- <img src="{% get_gravatar comment.email 60 "G" %}"
+           class="gravatar photo" alt="{{ comment.user_name }}"/> -->
+     
+      {{ comment.comment|safe|linebreaks }}
+    </article>  
+  {% endfor %}
+    {% if not object.comments_are_open %}
+  <p>{% trans "Comments are closed." %}</p>
+    {% endif %}
+  {% else %}
+    {% if object.comments_are_open %}
+  <p>{% trans "No comments yet." %}</p>
+    {% else %}
+  <p>{% trans "Comments are closed." %}</p>
+    {% endif %}
+  {% endif %}
+  {% endwith %}
+</section>
