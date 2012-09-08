@@ -1,9 +1,6 @@
 
 @media all {
 
-
-
-
 /* TYPOGRAPHY */
 
 body                                   {max-width:620px; min-width:430px; padding:10px 25px; margin:0 auto;
@@ -32,17 +29,15 @@ strong                                 {font-weight:bold;}
 em                                     {font-style:italic;}
 small                                  {font-size:0.875em;}
 
-
-
 /* HEADER */
 
-body > header                          {padding-bottom:10px; /*border-top:4px solid #939393;*/}
-body > header hgroup                   {padding-top:20px; margin-bottom:20px; text-align:center;}
-body > header hgroup h1                {text-transform:uppercase; font-size:50px; line-height:1.1em; word-spacing:0.15em;}
-body > header hgroup h2                {font-size:21px;}
-body > header dl                       {line-height:1.2em; text-align:center;}
-body > header dt                       {position:absolute; left:-9000px;}
-body > header dd                       {margin:0.25em 0 0;}
+body .vcard                          {padding-bottom:10px; /*border-top:4px solid #939393;*/}
+body .vcard hgroup                   {padding-top:20px; margin-bottom:20px; text-align:center;}
+body .vcard hgroup h1                {text-transform:uppercase; font-size:50px; line-height:1.1em; word-spacing:0.15em;}
+body .vcard hgroup h2                {font-size:21px;}
+body .vcard dl                       {line-height:1.2em; text-align:center;}
+body .vcard dt                       {position:absolute; left:-9000px;}
+body .vcard dd                       {margin:0.25em 0 0;}
 
 /* SECTIONS */
 
@@ -63,7 +58,7 @@ section section hgroup + p:before      {content:"/ ";}
 section section ul                     {list-style:square;}
 section section + section              {margin-top:1.5em;}
 
-.contact                               {padding-top:1em; border-top:1px solid #ccc;}
+.contact                               {padding-top:1em; border-top:1px solid #ccc; text-align:center;}
 .contact ul li                         {display:inline;}
 .contact ul li:before                  {content:"\00b7  ";}
 .contact ul li:first-child:before      {content:"";}
@@ -77,7 +72,6 @@ body                                   {max-width:none; width:auto; padding:0; f
 abbr[title]                            {border:0;}
 a:link, a:visited                      {border:0; color:#520;}
 section a:link, section a:visited      {color:#000;}
-section a[href]:after                  {content:" - " attr(href); border-bottom:2px solid #520; color:#520;}
 
 body > header                          {border-top:0;}
 body > header hgroup                   {padding-top:0;}
@@ -86,7 +80,7 @@ body > header hgroup h2                {font-size:14pt;}
 
 body > section                         {padding:0.75em 0 0 25%; border-top:1px solid #ccc; margin:2em 0 2em;}
 body > section > h1                    {float:left; width:33%; padding:0; border:0; margin:0 0 0 -33%; font-size:16pt;
-                                        text-align:left;}
+                                        text-align:left; page-break-after:always;}
 
 /* end of @media print */}
 
@@ -110,3 +104,7 @@ section section hgroup + p:before      {content:"";}
 section section ul                     {padding-left:15px;}
 
 /* end of @media handheld */}
+
+@media print {
+	section.contact {display:none !important;}
+}
