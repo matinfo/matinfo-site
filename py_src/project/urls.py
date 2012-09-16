@@ -42,6 +42,7 @@ urlpatterns = patterns('',
 #    (r'^i18n/setlang/$', 'django.views.i18n.set_language'),
 #    (r'^tinymce/', include('tinymce.urls')),
     (r'^xmlrpc/$', 'django_xmlrpc.views.handle_xmlrpc'),
+    (r'^monitor/', include('skwissh.urls')),
 )
 
 sitemaps = {

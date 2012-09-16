@@ -27,8 +27,8 @@ Start runnning it locally (dev)
 Run the following commands::
 
     ./init.sh -c personal.cfg
-    bin/django syncdb --all
-    bin/django migrate --fake
+    bin/django syncdb
+    bin/django migrate
     bin/django runserver
 
 Done

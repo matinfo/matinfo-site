@@ -124,6 +124,8 @@ INSTALLED_APPS = [
     #'djcelery',
     #'ghettoq',
     #'monitor',
+    'kronos',
+    'skwissh',
 ]
 
 TEMPLATE_CONTEXT_PROCESSORS = [
