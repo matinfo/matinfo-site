@@ -10,6 +10,7 @@
 .pydevproject
 .installed.cfg
 .mr.developer.cfg
+logs
 bin
 develop-eggs
 develop-eggs-src
