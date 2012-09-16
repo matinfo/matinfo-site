@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 #from base_i18n import *
 #from base_cms import *
+from base_logging import *
 from base_zinnia import *
 import os
 
@@ -55,11 +56,11 @@ USE_TZ = False # Django >= 1.4.0
 PROJECT_DIR = os.path.abspath( os.path.join(os.path.dirname(__file__),'../') )
 
 # files uploaded from apps.
-MEDIA_ROOT = os.path.join(PROJECT_DIR, '..', '..', 'tmp', 'media')
+MEDIA_ROOT = os.path.join(PROJECT_DIR, '..', 'media')
 MEDIA_URL = '/media/'
 
 # all collected statics file of apps - prod only.
-STATIC_ROOT = os.path.join(PROJECT_DIR, '..', '..', 'tmp', 'static')
+STATIC_ROOT = os.path.join(PROJECT_DIR, '..', 'tmp', 'static')
 STATIC_URL = '/static/'
 
 ADMIN_MEDIA_PREFIX = ''.join([STATIC_URL, 'admin/'])
@@ -119,6 +120,7 @@ INSTALLED_APPS = [
 # custom apps
     'project', # mandatory
     'ajaxcomments',
+    'activelink',
     #'djcelery',
     #'ghettoq',
     #'monitor',
@@ -179,43 +181,3 @@ SEKIZAI_IGNORE_VALIDATION = True
 #CARROT_BACKEND = "ghettoq.taproot.Database"
 
 #PUSH_NOTIFICATION_CREDENTIALS = ''
-
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': True,
-    'formatters': {
-        'verbose': {
-            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
-        },
-        'simple': {
-            'format': '%(levelname)s %(message)s'
-        },
-    },
-    'handlers': {
-        'null': {
-            'level':'DEBUG',
-            'class':'django.utils.log.NullHandler',
-        },
-        'console':{
-            'level':'DEBUG',
-            'class':'logging.StreamHandler',
-            'formatter': 'simple'
-        },
-        'mail_admins': {
-            'level': 'ERROR',
-            'class': 'django.utils.log.AdminEmailHandler',
-        }
-    },
-    'loggers': {
-        'django': {
-            'handlers':['null'],
-            'propagate': True,
-            'level':'INFO',
-        },
-        'django.request': {
-            'handlers': ['mail_admins'],
-            'level': 'ERROR',
-            'propagate': False,
-        },
-    }
-}
