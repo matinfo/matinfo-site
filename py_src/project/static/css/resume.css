@@ -45,19 +45,18 @@ body > section                         {clear:both; padding:0 15px; margin:2em 0
 body > section > h1                    {padding:0 15px 0.25em; border-bottom:1px solid #ccc; margin:0 -15px 0.5em; font-size:24px;
                                         text-transform:uppercase;}
 
-body > section li > span               {display: block;}
-
 section section                        {margin:0;}
 section section h1                     {font-size:18px; color:#6a8014;}
 section section h1 span                {font-style:italic;}
-section section h2                     {display:inline; font-size:16px; color:#111;}
-section section h2:before              {content:"~ ";}
+section section h2                     {display:inline; font-size:16px; color:#cd4e0e;}
+section section h2:before              {content:"~ "; color:#474747;}
 section section hgroup,
- section section hgroup + p            {display:inline; margin:0;}
+ section section hgroup + p            {display:inline; margin:0; color:#cd4e0e;}
 section section hgroup + p:before      {content:"/ ";}
 section section ul                     {list-style:square;}
 section section + section              {margin-top:1.5em;}
 
+.work span                             {display: block;}
 .contact                               {padding-top:1em; border-top:1px solid #ccc; text-align:center;}
 .contact ul li                         {display:inline;}
 .contact ul li:before                  {content:"\00b7  ";}
@@ -75,12 +74,14 @@ section a:link, section a:visited      {color:#000;}
 
 body > header                          {border-top:0;}
 body > header hgroup                   {padding-top:0;}
-body > header hgroup h1                {font-size:32pt;}
-body > header hgroup h2                {font-size:14pt;}
+body > header hgroup h1                {font-size:32pt; page-break-before:always !important;}
+body > header hgroup h2                {font-size:14pt; page-break-before:always !important;}
 
 body > section                         {padding:0.75em 0 0 25%; border-top:1px solid #ccc; margin:2em 0 2em;}
 body > section > h1                    {float:left; width:33%; padding:0; border:0; margin:0 0 0 -33%; font-size:16pt;
-                                        text-align:left; page-break-after:always;}
+                                        text-align:left; page-break-before:always !important;}
+
+section.contact {display:none !important;}
 
 /* end of @media print */}
 
@@ -104,7 +105,3 @@ section section hgroup + p:before      {content:"";}
 section section ul                     {padding-left:15px;}
 
 /* end of @media handheld */}
-
-@media print {
-	section.contact {display:none !important;}
-}

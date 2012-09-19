@@ -99,7 +99,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.comments',
     'django.contrib.admin',
-    #'django.contrib.flatpages',
+    'django.contrib.flatpages',
 
 # base apps
     'mptt',

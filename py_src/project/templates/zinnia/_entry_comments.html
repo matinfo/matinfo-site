@@ -12,7 +12,7 @@
   {% for comment in comment_list %}
     <article id="c{{ comment.pk }}" class="comment {% cycle box1,box2 %}{% if comment.user in object.authors.all %} post-author{% endif %}">
       <header>
-        <time datetime="{{ comment.submit_date|date:"c" }}Z">{{ comment.submit_date|date:"l d F Y P" }}</time>
+        <time datetime="{{ comment.submit_date|date:"c" }}Z"F>{{ comment.submit_date|date:"l d F Y P" }}</time>
         <a href="{{ comment.get_absolute_url }}" title="{% trans "Permalink to this comment" %}">#</a>
         <h3>{% if comment.url %}
           <a href="{{ comment.url }}" rel="external nofollow"
