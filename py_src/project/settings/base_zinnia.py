@@ -4,7 +4,7 @@ ZINNIA_MEDIA_URL = 'media/blog/'
 ZINNIA_COPYRIGHT = 'Django Zinnia\'s Blog'
 ZINNIA_UPLOAD_TO = 'uploads'
 ZINNIA_PING_DIRECTORIES = ()
-ZINNIA_MARKUP_LANGUAGE = "markdown" # textile, restructuredtext (dep. require)
+ZINNIA_MARKUP_LANGUAGE = "html" # markdown, textile, restructuredtext (dep. require)
 
 from zinnia.xmlrpc import ZINNIA_XMLRPC_METHODS
 XMLRPC_METHODS = ZINNIA_XMLRPC_METHODS
