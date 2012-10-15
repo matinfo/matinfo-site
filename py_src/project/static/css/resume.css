@@ -66,35 +66,6 @@ section.print                          {display:none;}
 
 /* end of @media all */}
 
-
-@media print {
-
-body                                   {max-width:none; width:auto; padding:20px 5px; font-size:11pt; color:#000;}
-abbr[title]                            {border:0;}
-a:link, a:visited                      {border:0; color:#520;}
-section a:link, section a:visited      {color:#000;}
-
-body > header                          {border-top:0; page-break-before:auto;}
-body > header hgroup                   {padding-top:0;}
-body > header hgroup h1                {font-size:32pt;}
-body > header hgroup h2                {font-size:17pt;}
-
-body > div > section                   {padding:0.75em 0 0 25%; border-top:1px solid #39c; margin:2em 0 2em; page-break-before:auto;}
-body > div > section > h1              {float:left; width:33%; padding:0; border:0; margin:0 0 0 -33%; font-size:16pt;
-                                        text-align:left;}
-
-section section                        {page-break-before:auto;}
-
-section.work li a:after                {content:" (" attr(href) ")";}
-section.contact 					   {display:none !important;}
-
-section.print                          {display:block !important; border:none;}
-section.print p                        {font-size:10px; color:#ccc; font-style:italic;}
-
-.page-break                            {display:block; page-break-before:always;}
-
-/* end of @media print */}
-
 @media handheld, screen and (max-width: 480px) {
 
 body                                   {min-width:0; padding:5px; font-size:14px;}
@@ -118,3 +89,31 @@ body .vcard hgroup h1                  {font-size: 34px;}
 body .vcard hgroup h2                  {font-size: 18px; margin: 0px;}
 
 /* end of @media handheld */}
+
+@media print {
+
+body                                   {max-width:none; width:auto; padding:20px 5px; font-size:11pt; color:#000;}
+abbr[title]                            {border:0;}
+a:link, a:visited                      {border:0; color:#520;}
+section a:link, section a:visited      {color:#000;}
+
+body > header                          {border-top:0; page-break-before:auto;}
+body > header hgroup                   {padding-top:0;}
+body > header hgroup h1                {font-size:32pt;}
+body > header hgroup h2                {font-size:17pt;}
+
+body > div > section                   {padding:0.75em 0 0 25%; border-top:1px solid #39c; margin:2em 0 2em; page-break-before:auto;}
+body > div > section > h1              {float:left; width:33%; padding:0; border:0; margin:0 0 0 -33%; font-size:16pt;
+                                        text-align:left;}
+
+section section                        {page-break-before:auto;}
+
+section.work li a:after                {content:" (" attr(href) ")";}
+section.contact 					   {display:none !important;}
+
+section.printonly                      {display:block !important; border:none;}
+section.printonly p                    {font-size:10px; color:#ccc; font-style:italic;}
+
+.page-break                            {display:block; page-break-before:always;}
+
+/* end of @media print */}
