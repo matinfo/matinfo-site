@@ -56,11 +56,11 @@ USE_TZ = False # Django >= 1.4.0
 PROJECT_DIR = os.path.abspath( os.path.join(os.path.dirname(__file__),'../') )
 
 # files uploaded from apps.
-MEDIA_ROOT = os.path.join(PROJECT_DIR, '..', 'media')
+MEDIA_ROOT = os.path.join(PROJECT_DIR, '..', '..', 'media')
 MEDIA_URL = '/media/'
 
 # all collected statics file of apps - prod only.
-STATIC_ROOT = os.path.join(PROJECT_DIR, '..', 'tmp', 'static')
+STATIC_ROOT = os.path.join(PROJECT_DIR, '..', '..', 'tmp', 'static')
 STATIC_URL = '/static/'
 
 ADMIN_MEDIA_PREFIX = ''.join([STATIC_URL, 'admin/'])
