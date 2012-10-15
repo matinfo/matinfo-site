@@ -62,7 +62,7 @@ section section + section              {margin-top:1.5em;}
 .contact ul li:before                  {content:"\00b7  ";}
 .contact ul li:first-child:before      {content:"";}
 
-section.print                          {display:none;}
+section.printonly                      {display:none;}
 
 /* end of @media all */}
 
