@@ -92,7 +92,7 @@ body .vcard hgroup h2                  {font-size: 18px; margin: 0px;}
 
 @media print {
 
-body                                   {max-width:none; width:auto; padding:20px; font-size:11pt; color:#000;}
+body                                   {max-width:none; width:auto; padding:5px; font-size:11pt; color:#000;}
 abbr[title]                            {border:0;}
 a:link, a:visited                      {border:0; color:#520;}
 section a:link, section a:visited      {color:#000;}
