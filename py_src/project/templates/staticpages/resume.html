@@ -1,14 +1,13 @@
 {% extends "zinnia/skeleton_base.html" %}
-{% load i18n %}
 
-{% block title %}{% trans "Mathieu Meylan CV" %}{% endblock %}
+{% block title %}Mathieu Meylan CV{% endblock %}
 
 {% block link %}
     <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/resume.css">
 {% endblock %}
 
 {% block main-content %}
-   <header class="vcard">
+    <header class="vcard">
         <hgroup>
             <h1 class="fn">Mathieu Meylan</h1>
             <h2 class="role">Internet Application Specialist</h2>
@@ -22,15 +21,17 @@
                 <span class="type"><span title="cell" class="value-title">mobile</span></span>
                 <span class="value">+41 78 787 93 15</span>
             </dd>
+            <dt>Address</dt>
+            <dd class="address">route de Neuchâtel 8, 1422 Grandson - CH</dd>
         </dl>
     </header>
     
     <section class="about">
         <h1>About me</h1>
-        <p>I manage complex Web projects, specially I give advise and support on all technical aspect from the back-end solution to the front-end interaction with the final implementation in production.</p>
-        <p>I create cutting edge Web application with the respect of the W3C standard. I'm particularly focused in accessibility, usability and interaction design with a preference of working with the open source technology.</p>
-        <p>I have also a strong engineering background on Linux operating system requested high availability for Internet services include an excellent knowledge on network management, security and monitoring.</p> 
-        <p>I'm currently responsible for all technical aspects for the Orange Communications SA online platform &#171; orange.ch &#187; and I offer internal and external consulting in the development of new online initiative in Switzerland.</p>
+        <p>I manage complex Web projects, specially I give advise and support on all technical aspect from the back-end solution at the front-end interaction with the final implementation in production.</p>
+        <p>I create cutting edge Web application with the respect of the W3C standard. I'm particularly focused in accessibility, usability and interaction design with a preference of working with the open source technologies.</p>
+        <p>I have also a strong engineering background on Linux operating system that request an high availability for Internet services, including an excellent knowledge on network management, security and monitoring.</p> 
+        <p>I'm currently responsible of all technical aspects for the Orange Communications SA online platform &#171; orange.ch &#187; and I offer internal and external consulting in the development of new online initiative in Switzerland.</p>
     </section><!-- end about -->
     
     <section class="experience"> 
@@ -77,7 +78,7 @@
                 <p>2004&#8211;2007</p>
             </header>
             <ul>
-                <li>Development and maintenance of services for the ISP platform hispeed.ch, include more than 600'000 private customers (~250 servers)</li>
+                <li>Development and maintenance of services for the <abbr title="Internet Service Provider">ISP</abbr> platform hispeed.ch, include more than 600'000 private customers (~250 servers)</li>
                 <li>Responsible of all Internet Services for Urbanet Swiss Romandie provider</li>
             </ul>
         </section>
@@ -151,27 +152,27 @@
 
     </section><!-- end expertise -->
 
-    <section class="work page-break">
+    <section class="work">
         <h1>Some Work</h1>
         <ul>
-            <li><a rel="external nofollow" href="http://orange.ch" title="http://orange.ch">Orange Switzerland mobile provider</a> ~ now <span>back-end &amp; front-end development, hosting management and online consulting</span></li>
-            <li><a rel="external nofollow" href="http://hautehorlogerie.org" title="http://hautehorlogerie.org">Fondation de la haute horlogerie</a> ~ 2009 <span>back-end &amp; front-end 20% development</span></li>
-            <li><a rel="external nofollow" href="http://mudac.ch" title="http://mudac.ch">Musée de design et d'arts appliqués contemporains</a> ~ 2008 <span>back-end &amp; front-end development and deployment</span></li>
-            <li><a rel="external nofollow" href="http://voyages-tcs.ch" title="http://voyages-tcs.ch">TCS Voyage &amp; Loisirs</a> ~ 2008 <span>front-end 90% development</span></li>
+            <li><a rel="external nofollow" href="http://orange.ch" title="http://orange.ch">Orange Switzerland mobile provider</a> &#8901; now <span>back-end &amp; front-end development, hosting management and online consulting</span></li>
+            <li><a rel="external nofollow" href="http://hautehorlogerie.org" title="http://hautehorlogerie.org">Fondation de la haute horlogerie</a> &#8901; 2009 <span>back-end &amp; front-end 20% development</span></li>
+            <li><a rel="external nofollow" href="http://mudac.ch" title="http://mudac.ch">Musée de design et d'arts appliqués contemporains</a> &#8901; 2008 <span>back-end &amp; front-end development and deployment</span></li>
+            <li><a rel="external nofollow" href="http://voyages-tcs.ch" title="http://voyages-tcs.ch">TCS Voyage &amp; Loisirs</a> &#8901; 2008 <span>front-end 90% development</span></li>
         </ul>
     </section><!-- end work -->
     
-    <section class="training">
+    <section class="training page-break">
         <h1>Continuous Training</h1>
         <ul>
-            <li><a rel="external nofollow" href="http://2012.djangocon.eu/">DjangoCon Europe 2012</a>
-            – Dango Conference Europe ~ 5 days / 2012
-            <li><a rel="external nofollow" href="http://www.lpi.org/linux-certifications/programs/lpic-2/exam-202">LPI202</a> – Advanced Linux Network Administration ~ 5days / 2005</li>
-            <li><a rel="external nofollow" href="http://suned.sun.com/Portal/US/94/SL-265.html">SL-265</a> – Java technology for structured programmers ~ 5days / 2003</li>
-            <li><a rel="external nofollow" href="https://www.redhat.com/elearning/rh253_red_hat_linux_networking_services_and_security_series/">RH253</a> – Red Hat Linux Networking &amp; Security Administration ~ 4days / 2002</li>
-            <li><a rel="external nofollow" href="http://www.cisco.com/web/learning/le3/current_exams/640-816.html">ICND</a> – Interconnecting Cisco Network Devices ~ 5days / 2000</li>
-            <li><a rel="external nofollow" href="http://www.experteach.de/">VoIP</a> – Voice Over IP ~ 2days / 2000</li>
-            <li><a rel="external nofollow" href="http://www.experteach.de/">TCPIP</a> – TCP/IP Protocols ~ 2days / 2000</li>
+            <li><a rel="external nofollow" href="http://2012.djangocon.eu/">DjangoCon EU 2012</a>
+            – Dango Conference Europe <span>5 days / 2012</span></li>
+            <li><a rel="external nofollow" href="http://www.lpi.org/linux-certifications/programs/lpic-2/exam-202">LPI202</a> – Advanced Linux Network Administration <span>5days / 2005</span></li>
+            <li><a rel="external nofollow" href="http://suned.sun.com/Portal/US/94/SL-265.html">SL-265</a> – Java technology for structured programmers <span>5 days / 2003</span></li>
+            <li><a rel="external nofollow" href="https://www.redhat.com/elearning/rh253_red_hat_linux_networking_services_and_security_series/">RH253</a> – Red Hat Linux Networking &amp; Security Administration <span>4 days / 2002</span></li>
+            <li><a rel="external nofollow" href="http://www.cisco.com/web/learning/le3/current_exams/640-816.html">ICND</a> – Interconnecting Cisco Network Devices <span>5 days / 2000</span></li>
+            <li><a rel="external nofollow" href="http://www.experteach.de/">VoIP</a> – Voice Over IP <span>2 days / 2000</span></li>
+            <li><a rel="external nofollow" href="http://www.experteach.de/">TCPIP</a> – TCP/IP Protocols <span>2 days / 2000</span></li>
         </ul>
     </section><!-- end training -->
     
@@ -184,13 +185,38 @@
                 <h2>Technician <abbr>ET</abbr></h2>
             </hgroup>
             <p>1997&#8211;1999</p>
-            <p>This school is now integrated into the <abbr title="Profesional Center of Nord Vaudois">CPNV</abbr> in Switzerland, the equivalent formation is now named <i>Technician ES en computer sience</i>.</p>
+            <p>This school is now integrated into the <abbr title="Centre Professionnel du Nord Vaudois">CPNV</abbr> in Switzerland, the equivalent formation is now named <i>Technician ES in computer science</i>.</p>
         </section>
     </section><!-- end education -->
-    
+
+    <section class="other">
+        <h1>more</h1>
+        <section>
+            <header>
+                <hgroup>
+                    <h1>Languages</h1>
+                </hgroup>
+            </header>
+            <ul>
+                <li>French: native</li>
+                <li>English: professional working proficiency</li>
+            </ul>
+        </section>
+        <section>
+            <header>
+                <hgroup>
+                    <h1>Mobility</h1>
+                </hgroup>
+            </header>
+            <ul>
+                <li>Driver licence and a car</li>
+            </ul>
+        </section>
+    </section><!-- end other -->
+
     <section class="contact">
         <ul>
-            <li><a href="mailto:mat@matinfo.ch">Email</a></li>
+            <li><a href="mailto:m.meylan@matinfo.ch">Email</a></li>
             <li><a rel="external" href="http://twitter.com/matinfo">Twitter</a></li>
             <li><a rel="external" href="http://github.com/matinfo">Github</a></li>
             <li><a rel="external" href="http://linkedin.com/in/matinfo">LinkedIn</a></li>
@@ -202,6 +228,6 @@
 
     <section class="printonly">
         <p>This page was generated from the HTML5/CSS3 page: http://www.matinfo.ch/resume</p>
-    </section>-<!-- end printonly
+    </section><!-- end printonly -->
 
 {% endblock %}

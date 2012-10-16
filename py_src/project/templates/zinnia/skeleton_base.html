@@ -1,4 +1,4 @@
-{% load zinnia_tags i18n %}{% get_tags as entry_tags %}<!doctype html>
+{% load zinnia_tags %}{% get_tags as entry_tags %}<!doctype html>
 <html dir="ltr" lang="{{ LANGUAGE_CODE }}">
   <head>
     <meta charset="utf-8">
@@ -41,7 +41,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
     <script>!window.jQuery && document.write(unescape('%3Cscript src="{{STATIC_URL}}js/libs/jquery-1.4.4.min.js"%3E%3C/script%3E'))</script>
 
-    <!-- scripts concatenated and minified via ant build script-->
+    <!-- scripts concatenated and minified via ant build script -->
     <script src="{{STATIC_URL}}js/plugins.js"></script>
     <script src="{{STATIC_URL}}js/script.js"></script>
     <!-- end concatenated and minified scripts-->
