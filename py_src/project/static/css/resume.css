@@ -3,124 +3,133 @@
 
 /* TYPOGRAPHY */
 
-body                                   {max-width:620px; min-width:430px; padding:10px 25px; margin:0 auto;
-                                        font:100%/1 Cambria, Georgia, Times New Roman, Times, serif; color:#444; background:#fff;}
+body                                   {max-width: 620px; min-width: 430px; padding: 10px 25px; margin: 0 auto;
+                                        font: 100%/1 Cambria, Georgia, "Times New Roman", Times, serif; color: #444; background: #fff;}
                                         
 /* Links */
-a:link, a:visited                      {border-bottom:1px solid #006699; color:#006699; text-decoration:none;}
-a:visited                              {border-bottom:1px solid #004d7a; color:#004d7a;}
-a:hover, a:focus, a:active             {border:0; color:#fff; background:#004d7a;}
-a:visited:hover                        {background:#004d7a;}
+a:link, a:visited                      {border-bottom: 1px solid #006699; color: #006699; text-decoration: none;}
+a:visited                              {border-bottom: 1px solid #004d7a; color: #004d7a;}
+a:hover, a:focus, a:active             {border: 0; color: #fff; background: #004d7a;}
+a:visited:hover                        {background: #004d7a;}
 
 /* Headings, paragraphs, quotes */
-h1, h2, h3, h4                         {font-weight:normal; line-height:1.2em; color:#222;}
-p, blockquote                          {margin:0.3em 0 1.4em; font-size:1em; line-height:1.4em;} /* 16px */
-blockquote                             {padding:0 25px; border-left:3px solid #999; margin:1em 0 1.4em;}
-blockquote p                           {font-family:calibri, arial, sans-serif; font-size:1em; color:#666;}
+h1, h2, h3, h4                         {font-weight: normal; line-height: 1.2em; color: #222;}
+p, blockquote                          {margin: 0.3em 0 1.4em; font-size: 1em; line-height: 1.4em;} /* 16px */
+blockquote                             {padding: 0 25px; border-left: 3px solid #999; margin: 1em 0 1.4em;}
+blockquote p                           {font-family: calibri, arial, sans-serif; font-size: 1em; color: #666;}
 
 /* Lists */
-ul, ol                                 {margin:0.25em 0 1.4em;}
-ul                                     {list-style:none;}
-ul li, ol li                           {padding:0; margin:0 0 0.5em; font-size:1em; line-height:1.4em;} /*16px*/
-li li, li p                            {font-size:1em;}
+ul, ol                                 {margin: 0.25em 0 1.4em;}
+ul                                     {list-style: none;}
+ul li, ol li                           {padding: 0; margin: 0 0 0.5em; font-size: 1em; line-height: 1.4em;} /*16px*/
+li li, li p                            {font-size: 1em;}
 
 /* Other */
-strong                                 {font-weight:bold;}
-em                                     {font-style:italic;}
-small                                  {font-size:0.875em;}
+strong                                 {font-weight: bold;}
+em                                     {font-style: italic;}
+small                                  {font-size: 0.875em;}
 
 /* HEADER */
 
-.vcard                          {padding-bottom:10px;}
-.vcard hgroup                   {padding-top:20px; margin-bottom:20px; text-align:center;}
-.vcard hgroup h1                {text-transform:uppercase; font-size:50px; line-height:1.1em; word-spacing:0.15em;}
-.vcard hgroup h2                {margin:0.5em 0 0.5em;}
+.vcard                          {padding-bottom: 10px; text-align: center;}
+.vcard h1                       {margin:0.3em 0 0.3em; text-transform: uppercase; text-align: center; font-size: 50px; line-height: 1.1em; word-spacing: 0.15em;}
+.vcard h2                       {margin: 0.5em 0 0.5em; text-align: center;}
 
-.vcard dl                       {line-height:1.2em; text-align:center;}
-.vcard dt                       {position:absolute; left:-9000px;}
-.vcard dd                       {margin:0.25em 0 0;}
+.vcard dl                       {line-height: 1.2em; text-align: center;}
+.vcard dt                       {position: absolute; left: -9000px;}
+.vcard dd                       {margin: 0.25em 0 0;}
 
 /* SECTIONS */
 
-body > div > section                 {clear:both; padding:0 15px; margin:2em 0 3em;}
-body > div > section > h1            {padding:0 15px 0.25em; border-bottom:1px solid #ccc; margin:0 -15px 0.5em; font-size:24px;
-                                        text-transform:uppercase;}
+body > div > section                 {clear: both; padding: 0 15px; margin: 2em 0 3em;}
+body > div > section > h1            {padding: 0 15px 0.25em; border-bottom: 1px solid #ccc; margin: 0 -15px 0.5em; font-size: 24px;
+                                        text-transform: uppercase;}
 
-section section                        {margin:0;}
-section section h1                     {font-size:18px; color:#6a8014;}
-section section h1 span                {font-style:italic;}
-section section h2                     {display:inline; font-size:16px; color:#cd4e0e;}
-section section h2:before              {content:"~ "; color:#474747;}
-section section hgroup,
- section section hgroup + p            {display:inline; margin:0; color:#cd4e0e; font-size:16px;}
-section section hgroup + p:before      {content:"/ ";}
-section section ul                     {list-style:square;}
-section section + section              {margin-top:1.5em;}
+section section                        {margin: 0;}
+section section h1                     {font-size: 18px; color: #6a8014;}
+section section h1 span                {font-style: italic;}
+section section h2                     {display: inline; font-size: 16px; color: #cd4e0e;}
+section section h2:before              {content: "~ "; color: #474747;}
+section section header,
+ section section header > p           {display: inline; margin: 0; color: #c6c6c6; font-size: 16px;}
+section section header > p:before     {content: "/ ";}
+section section ul                     {list-style: square;}
+section section + section              {margin-top: 1.5em;}
 
-section.work span                             {display: block;}
-section.training li span:before               {content:"\00b7  ";}
-section.other                                 {display:none;} 
-section.contact                               {padding-top:1em; text-align:center;}
-section.contact ul li                         {display:inline;}
-section.contact ul li:before                  {content:"\00b7  ";}
-section.contact ul li:first-child:before      {content:"";}
+section.work span                             {display:  block;}
+section.training li span:before               {content: "\00b7  ";}
+section.other                                 {display: none;} 
+section.contact                               {padding-top: 1em; text-align: center;}
+section.contact ul li                         {display: inline;}
+section.contact ul li:before                  {content: "\00b7  ";}
+section.contact ul li:first-child:before      {content: "";}
 
-section.printonly                      {display:none;}
+section.footer                         {padding-bottom: 5px; width: 98%;}
+section.footer a,
+ section.footer a:visited,
+ section.footer a:hover,
+ section.footer a:focus, 
+ section.footer a:active               {text-decoration: none; background: none; border: none}
+section.footer .last-update,
+section.footer .printonly              {font-size: 80%; color: #ccc; font-style: italic; margin-top: 10px; display: inline-block; float: left;}
+section.footer .w3c                    {float: right;}
+section.footer .printonly              {display: none; float:right;}
 
 /* end of @media all */}
 
-@media handheld, screen and (max-width: 480px) {
+@media handheld, screen and (max-width:  480px) {
 
-body                                   {min-width:0; padding:5px; font-size:14px;}
-h1, h2, h3, h4                         {color:#333; }
+body                                   {min-width: 0; padding: 5px; font-size: 14px;}
+h1, h2, h3, h4                         {color: #333; }
 
-body > header hgroup                   {padding-top:10px;}
-body > header hgroup h1                {font-size:24px;}
-body > header hgroup h2                {font-size:14px; left:75px;}
+body > header                          {padding-top: 10px;}
+body > header h1                       {font-size: 24px;}
+body > header h2                       {font-size: 14px; left: 75px;}
 
-body > div > section                   {padding:0; margin:2em 0;}
-body > div > section > h1              {padding-left:0; padding-right:0; margin:0 0 0.5em; font-size:20px;}
+body > div > section                   {padding: 0; margin: 2em 0;}
+body > div > section > h1              {padding-left: 0; padding-right: 0; margin: 0 0 0.5em; font-size: 20px;}
 
-section section h1                     {font-size:16px;}
-section section h2                     {font-size:13px;}
-section section hgroup                 {display:inline;}
-section section hgroup + p             {display:inline; margin-bottom:0.75em; font-size:13px;}
-section section ul                     {padding-left:15px;}
+section section h1                     {font-size: 16px;}
+section section h2                     {font-size: 13px;}
+section section header                 {display: inline;}
+section section header > p             {display: inline; margin-bottom: 0.75em; font-size: 13px;}
+section section ul                     {padding-left: 15px;}
 
-.vcard hgroup h1                       {font-size: 34px;}
-.vcard hgroup h2                       {font-size: 18px; margin:0.5em 0 0.5em;}
+.vcard h1                              {font-size:  34px;}
+.vcard h2                              {font-size:  18px; margin: 0.5em 0 0.5em;}
 
 /* end of @media handheld */}
 
 @media print {
 
-body                                   {max-width:none; width:auto; padding:15px; font-size:11pt; color:#000; background-color: #fff;}
-abbr[title]                            {border:0;}
-a:link, a:visited                      {border:0; color:#000;}
-section a:link, section a:visited      {color:#000;}
+body                                   {max-width: none; width: auto; padding: 15px; font-size: 11pt; color: #000; background-color:  #fff;}
+abbr[title]                            {border: 0;}
+a:link, a:visited                      {border: 0; color: #000;}
+section a:link, section a:visited      {color: #000;}
 
-.vcard hgroup h1                       {font-size:40pt;}
-.vcard hgroup h2                       {font-size:20pt;}
+.vcard h1                              {font-size: 40pt;}
+.vcard h2                              {font-size: 20pt;}
 
-body > header                          {border-top:0; page-break-before:auto;}
-body > header hgroup                   {padding-top:0;}
-body > header hgroup h1                {font-size:32pt;}
-body > header hgroup h2                {font-size:16pt;}
+body > header                          {border-top: 0; page-break-before: auto;}
+body > header .hgroup                  {padding-top: 0;}
+body > header h1                       {font-size: 32pt;}
+body > header h2                       {font-size: 16pt;}
 
-body > div > section                   {padding:0.75em 0 0 25%; border-top:1px solid #069; margin:2em 0 2em; page-break-before:auto;}
-body > div > section > h1              {float:left; width:33%; padding:0; border:0; margin:0 0 0 -33%; font-size:16pt;
-                                        text-align:left;}
+body > div > section                   {padding: 0.75em 0 0 25%; border-top: 1px solid #069; margin: 2em 0 2em; page-break-before: auto;}
+body > div > section > h1              {float: left; width: 33%; padding: 0; border: 0; margin: 0 0 0 -33%; font-size: 16pt; text-align: left;}
 
-section section                        {page-break-before:auto;}
-section section h2                     {font-size:12pt;}
-section section hgroup + p             {font-size:12pt;}
+section section                        {page-break-before: auto;}
+section section h2                     {font-size: 12pt;}
+section section header > p             {font-size: 12pt;}
 
-section.work li a:after                {content:" (" attr(href) ") ";}
-section.other                          {display:block;} 
-section.contact 					   {display:none;}
-section.printonly                      {display:block; border:none;}
-section.printonly p                    {font-size:8pt; color:#ccc; font-style:italic;}
+section.work li a:after                {content: " (" attr(href) ") ";}
+section.other                          {display: block;} 
+section.contact 					   {display: none;}
+section.footer                         {padding: 0; margin:0;}
+section.footer .last-update            {font-size: 8pt;}
+section.footer .w3c                    {display: none;}
+section.footer .printonly              {display: block; border: none; font-size: 8pt; padding: 0;}
 
-.page-break                            {display:block; page-break-before:always;}
+.page-break                            {display: block; page-break-before: always;}
 
 /* end of @media print */}

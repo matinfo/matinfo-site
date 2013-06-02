@@ -892,7 +892,7 @@ time {
   height: 16px;
   border: 1px solid #555;
   margin: 0 5px 0 0;
-  background: url(ttps://secure.gravatar.com/avatar/db0536eecf17ee78d2cf1561f778c819?s=140) no-repeat;
+  background: url(https://secure.gravatar.com/avatar/db0536eecf17ee78d2cf1561f778c819?s=140) no-repeat;
 }
 
 /* Comment permalink */
@@ -965,6 +965,7 @@ time {
 
   /* end of media */
 }
+
 @media screen and (max-width: 580px) {
 
   .post__body ul,
@@ -983,6 +984,7 @@ time {
 
   /* end of media */
 }
+
 @media screen and (max-width: 480px) {
   html {
     font-size: 0.875em;
@@ -1021,6 +1023,7 @@ time {
 
   /* end of media */
 }
+
 @media screen and (max-width: 340px) {
   .site-logo img {
     width: 16px;
@@ -1089,9 +1092,5 @@ time {
     widows: 3;
   }
 
-  @page {
-    margin: 0.5cm;
-}
-
-  /* end of @media */
+  /* end of print */
 }
